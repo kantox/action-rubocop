@@ -1,7 +1,7 @@
 FROM ruby:2.7.1-alpine
 
 ENV REVIEWDOG_VERSION v0.9.17
-ENV RUBOCOP_VERSION 0.81
+ENV RUBOCOP_VERSION 0.82
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN apk add --update --no-cache build-base git cmake openssl-dev
