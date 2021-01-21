@@ -1,4 +1,4 @@
-FROM ruby:2.7.1-alpine
+FROM ruby:3.0.0-alpine
 
 ENV REVIEWDOG_VERSION v0.9.17
 ENV RUBOCOP_VERSION 0.82
