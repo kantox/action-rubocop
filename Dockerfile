@@ -7,11 +7,7 @@ RUN cd /tmp && bundle
 
 FROM ruby:3.0.0-alpine
 
-RUN wget -O v1.8.4.2.tar.gz https://github.com/git/git/archive/v1.8.4.2.tar.gz
-RUN tar -xzvf ./v1.8.4.2.tar.gz
-RUN cd git-1.8.4.2/ \
-&& make prefix=/usr/local all \
-&& make prefix=/usr/local install
+RUN apk add --update --no-cache git
 
 ENV REVIEWDOG_VERSION v0.11.0
 
