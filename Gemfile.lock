@@ -30,6 +30,8 @@ GEM
       logger
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
+    faraday-retry (2.2.1)
+      faraday (~> 2.0)
     gitlab (4.20.1)
       httparty (~> 0.20)
       terminal-table (>= 1.5.1)
@@ -84,6 +86,8 @@ GEM
       unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.37.0)
       parser (>= 3.3.1.0)
+    rubocop-capybara (2.21.0)
+      rubocop (~> 1.41)
     rubocop-i18n (3.0.0)
       rubocop (~> 1.0)
     rubocop-performance (1.23.0)
@@ -116,14 +120,16 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  pronto
-  pronto-rubocop
-  rubocop
-  rubocop-i18n
-  rubocop-performance
-  rubocop-rails
-  rubocop-rake
-  rubocop-rspec
+  faraday-retry (~> 2.2.1)
+  pronto (~> 0.11.2)
+  pronto-rubocop (~> 0.11.5)
+  rubocop (~> 1.69.2)
+  rubocop-capybara (~> 2.21.0)
+  rubocop-i18n (~> 3.0.0)
+  rubocop-performance (~> 1.23.0)
+  rubocop-rails (~> 2.27.0)
+  rubocop-rake (~> 0.6.0)
+  rubocop-rspec (~> 3.3.0)
 
 RUBY VERSION
    ruby 3.3.6p108

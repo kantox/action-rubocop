@@ -1,11 +1,14 @@
-FROM ruby:3.3.6-alpine AS builder
+# syntax=docker/dockerfile:1.9
+# check=error=true
+ARG RUBY_VERSION=3.3.6-alpine
+FROM ruby:${RUBY_VERSION} AS builder
 
 RUN apk add --update --no-cache git cmake make g++ pcre-tools openssl-dev
 
 COPY Gemfile* /tmp/
 RUN cd /tmp && bundle
 
-FROM ruby:3.3.6-alpine
+FROM ruby:${RUBY_VERSION}
 
 RUN apk add --update --no-cache git
 
