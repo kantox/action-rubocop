@@ -5,7 +5,7 @@ FROM ruby:${RUBY_VERSION} AS builder
 
 RUN apk add --update --no-cache git cmake make g++ pcre-tools openssl-dev
 
-COPY Gemfile* /tmp/
+COPY Gemfile* .ruby-version /tmp/
 RUN cd /tmp && bundle
 
 FROM ruby:${RUBY_VERSION}
