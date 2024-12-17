@@ -1,15 +1,18 @@
-FROM ruby:3.0.0-alpine as builder
+# syntax=docker/dockerfile:1.9
+# check=error=true
+ARG RUBY_VERSION=3.3.6-alpine
+FROM ruby:${RUBY_VERSION} AS builder
 
 RUN apk add --update --no-cache git cmake make g++ pcre-tools openssl-dev
 
 COPY Gemfile* /tmp/
 RUN cd /tmp && bundle
 
-FROM ruby:3.0.0-alpine
+FROM ruby:${RUBY_VERSION}
 
 RUN apk add --update --no-cache git
 
-ENV REVIEWDOG_VERSION v0.11.0
+ENV REVIEWDOG_VERSION=v0.20.3
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b /usr/local/bin/ $REVIEWDOG_VERSION
