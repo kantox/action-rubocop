@@ -21,6 +21,8 @@ COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
 
 COPY entrypoint.sh /entrypoint.sh
 
+RUN git config --global --add safe.directory /src
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 VOLUME /src
