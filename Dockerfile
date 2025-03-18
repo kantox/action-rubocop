@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.9
 # check=error=true
-ARG RUBY_VERSION=3.3.6-alpine
+ARG RUBY_VERSION=3.4.2-alpine
 FROM ruby:${RUBY_VERSION} AS builder
 
 RUN apk add --update --no-cache git cmake make g++ pcre-tools openssl-dev
