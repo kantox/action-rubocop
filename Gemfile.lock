@@ -127,20 +127,20 @@ GEM
     uri (1.0.3)
 
 PLATFORMS
-  x86_64-linux
+  ruby
   x86_64-linux-musl
 
 DEPENDENCIES
-  faraday-retry
-  pronto
-  pronto-rubocop
-  rubocop
-  rubocop-capybara
-  rubocop-i18n
-  rubocop-performance
-  rubocop-rails
-  rubocop-rake
-  rubocop-rspec
+  faraday-retry (~> 2.2.1)
+  pronto (~> 0.11.3)
+  pronto-rubocop (~> 0.11.6)
+  rubocop (~> 1.74.0)
+  rubocop-capybara (~> 2.22.0)
+  rubocop-i18n (~> 3.2.3)
+  rubocop-performance (~> 1.24.0)
+  rubocop-rails (~> 2.30.3)
+  rubocop-rake (~> 0.7.1)
+  rubocop-rspec (~> 3.5.0)
 
 RUBY VERSION
    ruby 3.4.2p28
